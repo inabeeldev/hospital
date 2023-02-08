@@ -249,6 +249,7 @@ class PatientController extends Controller
         ->where('patients.id' , $id)
         ->select('procedures.*')
         ->get();
+        // dd($references);
         return view('patients.show',compact('patient','doctors','references','conditions','departments','procedures'));
     }
 
@@ -266,7 +267,7 @@ class PatientController extends Controller
         $doctors = User::pluck('name','id')->all();
         $conditions = Condition::pluck('name','id')->all();
         $departments = Department::pluck('name','id')->all();
-        $procedures = Procedure::pluck('name','id')->all();
+        $procedures = Procedure::where('doctor_id', $patient->doctor_id)->pluck('name','id')->all();
         // $procedures = DB::table('procedures')
         // ->join('patient_procedures', 'procedures.id',"=",'patient_procedures.procedure_id')
         // ->join('patients', 'patients.id',"=",'patient_procedures.patient_id')
@@ -290,12 +291,14 @@ class PatientController extends Controller
 
         $input1 = $request->all();
         if ($request->procedure_id) {
-            # code...
+            DB::table('patient_procedures')
+            ->where('patient_id', $patient->id)
+            ->delete();
+
         foreach ($input1['procedure_id'] as $pa) {
                 # code...
-            DB::table('patient_procedures')->where('procedure_id', $request->procedure_id)
-            ->where('patient_id', $patient->id)
-            ->update(['procedure_id'=>$pa,'patient_id'=>$patient->id]);
+            DB::table('patient_procedures')
+            ->insert(['procedure_id'=>$pa,'patient_id'=>$patient->id]);
 
         }
         }

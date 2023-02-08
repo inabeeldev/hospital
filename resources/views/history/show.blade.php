@@ -56,6 +56,7 @@
                         <th>Patient Name</th>
                         <th>Patient Phone</th>
                         <th>patient Procedures</th>
+                        <th>Fee Received</th>
 
                     </tr>
                     @foreach ($closed_patients as $closed_patient)
@@ -73,6 +74,7 @@
                         @endforeach
                     </table>
                         </td>
+                        <td>{{ $closed_patient->total_fee }}</td>
 
 
                     </tr>

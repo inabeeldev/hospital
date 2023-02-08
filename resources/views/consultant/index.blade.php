@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-lg-12 margin-tb mt-7">
                 <div class="pull-left">
-                    <h2>consultants</h2>
+                    <h2>consultants </h2>
                 </div>
 
             </div>
@@ -29,9 +29,11 @@
         </div>
 
         <br>
+        <div class="text-center">
+            <button class="btn btn-primary printco">Print</button>
+        </div>
 
-
-        <table class="table table-bordered" id="tbc1">
+        <table class="table table-bordered printableco" id="tbc1">
             <thead>
                 <tr>
                     <th>MR #</th>
@@ -79,5 +81,12 @@
         $(document).ready( function () {
             $('#tbc1').DataTable();
         } );
+    </script>
+    <script>
+        $(function() {
+                 $('.printco').on('click', function() {
+                    $('.printableco').printThis();
+                 });
+             });
     </script>
 @endsection

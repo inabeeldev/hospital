@@ -20,13 +20,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>First Name:</strong>
-                {{ $patient->first_name }}
+                {{ $patient->first_name ? $patient->first_name : '' }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>MR No:</strong>
-                {{ $patient->mr_no }}
+                {{ $patient->mr_no ? $patient->mr_no : '' }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -38,103 +38,103 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Second Name Type:</strong>
-                {{ $patient->second_name_type }}
+                {{ $patient->second_name_type ? $patient->second_name_type : '' }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Second Name:</strong>
-                {{ $patient->second_name }}
+                {{ $patient->second_name ? $patient->second_name : '' }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Age:</strong>
-                {{ $patient->age }}
+                {{ $patient->age ? $patient->age : '' }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Phone:</strong>
-                {{ $patient->phone }}
+                {{ $patient->phone ? $patient->phone : '' }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Cnic:</strong>
-                {{ $patient->cnic }}
+                {{ $patient->cnic ? $patient->cnic : '' }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Gender:</strong>
-                {{ $patient->gender }}
+                {{ $patient->gender ? $patient->gender : '' }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Address:</strong>
-                {{ $patient->address }}
+                {{ $patient->address ? $patient->address : '' }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Patient Came With:</strong>
-                {{ $patient->patient_came_with }}
+                {{ $patient->patient_came_with ? $patient->patient_came_with : '' }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Who came with patient:</strong>
-                {{ $patient->patient_came_with_name }}
+                {{ $patient->patient_came_with_name ? $patient->patient_came_with_name : '' }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>BP:</strong>
-                {{ $patient->bp }}
+                {{ $patient->bp ? $patient->bp : '' }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Sugar:</strong>
-                {{ $patient->sugar }}
+                {{ $patient->sugar ? $patient->sugar : '' }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Temperature:</strong>
-                {{ $patient->temperature }}
+                {{ $patient->temperature ? $patient->temperature : '' }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Status:</strong>
-                {{ $patient->status }}
+                {{ $patient->status ? $patient->status : '' }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Doctor Name:</strong>
-                {{ $doctors->name }}
+                {{ $doctors->name ? $doctors->name : '' }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Reference Name:</strong>
-                {{ $references->name }}
+                {{ $references ? $references->name : '' }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Condition:</strong>
-                {{ $conditions->name }}
+                {{ $conditions->name ? $conditions->name : '' }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Department:</strong>
-                {{ $departments->name }}
+                {{ $departments->name ? $departments->name : '' }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -157,7 +157,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Total fee:</strong>
-                {{ $patient->total_fee }}
+                {{ $patient->total_fee ? $patient->total_fee : '' }}
             </div>
         </div>
 
