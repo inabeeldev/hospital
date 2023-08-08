@@ -234,7 +234,7 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label for="">Total Fee</label>
-                            <input type="text" class="form-control" value="{{ $patient->total_fee }}"  id="staticEmail" name="total_fee" >
+                            <input type="text" class="form-control" disabled value="{{ $patient->total_fee }}"  id="staticEmail" name="total_fee" >
                         </div>
                     </div>
 

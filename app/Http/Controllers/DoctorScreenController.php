@@ -11,6 +11,7 @@ use App\Models\Reference;
 use App\Models\Department;
 use Illuminate\Http\Request;
 use App\Events\PatientChecked;
+use App\Models\PatientEcg;
 use App\Models\PatientEcho;
 use App\Models\Prescription;
 use Illuminate\Support\Facades\DB;
@@ -43,6 +44,13 @@ class DoctorScreenController extends Controller
     public function create()
     {
         //
+    }
+
+    public function StatusPatients(Request $request)
+    {
+        Patient::whereIn('id', $request->patient_id)->update(['status' => 'Checked']);
+        return redirect()->back();
+
     }
 
     /**
@@ -241,6 +249,35 @@ class DoctorScreenController extends Controller
         // return back();
         return redirect()->route('doctor-screen.edit',$request->patient_id);
 
+    }
+
+    public function ecg($id)
+    {
+        $patient = Patient::where('id',$id)->first();
+        return view('dscreen.ecg',compact('patient'));
+    }
+    public function ecg_store(Request $request)
+    {
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $imageName = time().'.'.$request->image->extension();
+
+        $request->image->move(public_path('images'), $imageName);
+
+        PatientEcg::create([
+            'patient_id' => $request->patient_id,
+            'comment' => $request->comment,
+            'image' => $imageName
+        ]);
+
+        return redirect()->route('doctor-screen.edit',$request->patient_id);
+
+    }
+    public function angio()
+    {
+        return view('dscreen.angiography');
     }
 
 }

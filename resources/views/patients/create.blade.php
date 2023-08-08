@@ -112,7 +112,7 @@
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label>CNIC</label>
-                            <input type="text" name="cnic" class="form-control" id="staticEmail"
+                            <input type="text" data-inputmask="'mask': '99999-9999999-9'"  placeholder="XXXXX-XXXXXXX-X" name="cnic" class="form-control" id="staticEmail"
                                 placeholder="Enter patient CNIC number">
                         </div>
                     </div>
@@ -393,5 +393,10 @@
     });
     });
     </script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script>
+    <script>
+        $(":input").inputmask();
+
+       </script>
 
 @endsection

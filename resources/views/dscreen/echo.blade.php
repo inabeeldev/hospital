@@ -7,7 +7,7 @@
         <div class="col-lg-12 margin-tb mt-7">
 
             <div class="pull-right">
-                <a class="btn btn-primary" href=""> Back</a>
+                <a class="btn btn-primary" href="{{ url()->previous() }}"> Back</a>
             </div>
         </div>
     </div>

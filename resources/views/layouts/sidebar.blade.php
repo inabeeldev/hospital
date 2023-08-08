@@ -68,6 +68,7 @@
                     </a>
                 </li>
                 @endcan
+                @can('user-list')
                 <li class="nav-main-item">
                     <a class="nav-main-link" href="{{route('users.index')}}">
                         <i class="nav-main-link-icon fa fa-border-all"></i>
@@ -75,6 +76,7 @@
 
                     </a>
                 </li>
+                @endcan
                 @can('role-list')
                 <li class="nav-main-item">
                     <a class="nav-main-link" href="{{route('roles.index')}}">

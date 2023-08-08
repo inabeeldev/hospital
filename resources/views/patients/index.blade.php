@@ -24,7 +24,7 @@
         @endif
 <br>
 
-        <table class="table table-bordered" id="tb1">
+        <table class="table table-bordered display nowrap" id="tb1">
             <thead>
                 <tr>
                     <th>No</th>
@@ -61,7 +61,7 @@
                             <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                             @endcan
                             <a class="btn btn-primary btn-warning btn-sm" href="{{ route('patients.print',$patient->id) }}">token</a>
-                            <a class="btn btn-primary btn-warning btn-sm" href="{{ route('patients.prescription',$patient->id) }}">Prescription</a>
+                            {{-- <a class="btn btn-primary btn-warning btn-sm" href="{{ route('patients.prescription',$patient->id) }}">Prescription</a> --}}
                         </form>
                     </td>
                 </tr>
@@ -78,9 +78,19 @@
 @endsection
 
 @section('scripts')
+
     <script>
-        $(document).ready( function () {
-            $('#tb1').DataTable();
+        $(document).ready(function() {
+    $('#tb1').DataTable( {
+        select: true,
+        dom: 'lBfrtip',
+        buttons: [
+            { extend: 'pdf', className: 'btn btn-primary' },
+            { extend: 'print', className: 'btn btn-warning' },
+            { extend: 'excel', className: 'btn btn-success' },
+            { extend: 'copy', className: 'btn btn-info' }
+        ]
         } );
+    } );
     </script>
 @endsection

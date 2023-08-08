@@ -29,11 +29,11 @@
         </div>
 
         <br>
-        <div class="text-center">
+        {{-- <div class="text-center">
             <button class="btn btn-primary printco">Print</button>
-        </div>
+        </div> --}}
 
-        <table class="table table-bordered printableco" id="tbc1">
+        <table class="table table-bordered printableco display nowrap" id="tbc1">
             <thead>
                 <tr>
                     <th>MR #</th>
@@ -55,6 +55,7 @@
 
             @endforeach
         </tbody>
+        <div class="poii" id="dddss"></div>
         </table>
 <br>
         <table class="table table-bordered">
@@ -77,11 +78,36 @@
 
 @endsection
 @section('scripts')
-    <script>
-        $(document).ready( function () {
-            $('#tbc1').DataTable();
-        } );
-    </script>
+<script>
+    $(document).ready(function() {
+        $('#tbc1').append('<h2 style="text-align:right">A fictional company\'s staff table.</h2>');
+$('#tbc1').DataTable( {
+    paging: true,
+    select: true,
+    dom: 'lBfrtip',
+    buttons: [
+        {
+        extend: 'pdf',
+        customize: function ( win ) {
+                    $(win.document)
+                        .css( 'font-size', '10pt' )
+                        .prepend(
+                            '<img src="http://datatables.net/media/images/logo-fade.png" style="position:absolute; top:0; left:0;" />'
+                        );
+
+                    $(win.document).find( 'table' )
+                        .addClass( 'compact' )
+                        .css( 'font-size', 'inherit' );
+                },
+        className: 'btn btn-primary'
+        },
+        { extend: 'print', className: 'btn btn-warning' },
+        { extend: 'excel', className: 'btn btn-success' },
+        { extend: 'copy', className: 'btn btn-info' }
+    ]
+    } );
+} );
+</script>
     <script>
         $(function() {
                  $('.printco').on('click', function() {

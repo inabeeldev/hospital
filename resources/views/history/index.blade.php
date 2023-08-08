@@ -75,7 +75,7 @@
                         <tbody>
                         @foreach ($patients as $patient)
                         <tr>
-                            <td><input type="checkbox" name="patient_id[]" value="{{ $patient->id }}"></td>
+                            <td><input type="checkbox"  id="chkk1" name="patient_id[]" value="{{ $patient->id }}" ></td>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $patient->mr_no }}</td>
                             <td>{{ $patient->first_name }}</td>
@@ -99,7 +99,7 @@
                         @endforeach
                     </tbody>
                     </table>
-                    <button type="submit" class="btn btn-warning">close</button>
+                    <button type="submit" class="btn btn-warning" id="closebtn" disabled="disabled">close</button>
                     </form>
                 </div>
             </div>
@@ -141,6 +141,21 @@
     $('#checkAll').click(function () {
      $('input:checkbox').prop('checked', this.checked);
  });
+
+</script>
+<script>
+   var checker = document.getElementById('checkAll');
+//    var checker2 = document.getElementById('chk1');
+ var sendbtn = document.getElementById('closebtn');
+ // when unchecked or checked, run the function
+ checker.onchange = function(){
+if(this.checked){
+    sendbtn.disabled = false;
+} else {
+    sendbtn.disabled = true;
+}
+}
+
 
 </script>
 
@@ -190,8 +205,18 @@
     });
 </script>
 <script>
-    $(document).ready( function () {
-        $('.tbh1').DataTable();
+    $(document).ready(function() {
+$('.tbh1').DataTable( {
+    paging: true,
+    select: true,
+    dom: 'lBfrtip',
+    buttons: [
+        { extend: 'pdf', className: 'btn btn-primary' },
+        { extend: 'print', className: 'btn btn-warning' },
+        { extend: 'excel', className: 'btn btn-success' },
+        { extend: 'copy', className: 'btn btn-info' }
+    ]
     } );
+} );
 </script>
 @endsection

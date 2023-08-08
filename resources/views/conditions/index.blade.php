@@ -24,13 +24,16 @@
         @endif
 
 
-        <table class="table table-bordered">
-            <tr>
-                <th>No</th>
-                <th>Name</th>
-                <th width="280px">Action</th>
-            </tr>
-            @foreach ($conditions as $condition)
+        <table class="table table-bordered display nowrap" id="tab5">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th width="280px">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($conditions as $condition)
             <tr>
                 <td>{{ ++$i }}</td>
                 <td>{{ $condition->name }}</td>
@@ -51,6 +54,7 @@
                 </td>
             </tr>
             @endforeach
+            </tbody>
         </table>
 
 
@@ -58,4 +62,23 @@
 
     </div>
 
+@endsection
+
+
+@section('scripts')
+<script>
+    $(document).ready(function() {
+$('#tab5').DataTable( {
+    paging: true,
+    select: true,
+    dom: 'lBfrtip',
+    buttons: [
+        { extend: 'pdf', className: 'btn btn-primary' },
+        { extend: 'print', className: 'btn btn-warning' },
+        { extend: 'excel', className: 'btn btn-success' },
+        { extend: 'copy', className: 'btn btn-info' }
+    ]
+    } );
+} );
+</script>
 @endsection

@@ -124,8 +124,10 @@
                 @foreach ($pros as $pro)
                     <option value="{{$pro->id}}">{{$pro->name}}</option>
                 @endforeach
-            </select>
+            </select><br><br>
             <a class="btn btn-primary" href="{{ route('doctor-screen.echo',$patient->id) }}">Echo</a>
+            <a class="btn btn-primary" href="{{ route('doctor-screen.ecg',$patient->id) }}">ECG</a><br>
+            <a class="btn btn-primary" href="{{ route('doctor-screen.angio',$patient->id) }}" style="margin-top: 10px">Angiography</a>
 
             </div>
           </div>

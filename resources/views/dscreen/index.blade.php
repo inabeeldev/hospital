@@ -22,10 +22,11 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-
-
+    <form action="{{ route('status_patients') }}" method="POST">
+        @csrf
     <table class="table table-bordered">
         <tr>
+            <th><input type="checkbox" id="checkAll2"></th>
             <th>No</th>
             <th>Token No</th>
             <th>MR NO</th>
@@ -38,6 +39,7 @@
         </tr>
         @foreach ($patients as $patient)
         <tr>
+            <td><input type="checkbox" name="patient_id[]" value="{{ $patient->id }}"></td>
             <td>{{ ++$i }}</td>
 
             <td>{{ $patient->token_no? $patient->token_no : $patient->token_no_s }}</td>
@@ -55,9 +57,25 @@
         </tr>
         @endforeach
     </table>
+    <button type="submit" class="btn btn-warning">checked</button>
+
+    </form>
 
 
     {!! $patients->links() !!}
 
 </div>
+
+
+
 @endsection
+
+@section('scripts1')
+<script>
+    $('#checkAll2').click(function () {
+     $('input:checkbox').prop('checked', this.checked);
+ });
+
+</script>
+@endsection
+

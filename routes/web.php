@@ -51,8 +51,12 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('procedures', ProcedureController::class);
     Route::resource('doctor-screen', DoctorScreenController::class);
     Route::get('doctor-screen/old_patient/{id}', [DoctorScreenController::class, 'show_old'])->name('show.old');
+    Route::post('doctor-screen/status_patients', [DoctorScreenController::class, 'StatusPatients'])->name('status_patients');
     Route::get('doctor-screen/echo/{id}', [DoctorScreenController::class, 'echo'])->name('doctor-screen.echo');
+    Route::get('doctor-screen/ecg/{id}', [DoctorScreenController::class, 'ecg'])->name('doctor-screen.ecg');
+    Route::get('doctor-screen/angio/{id}', [DoctorScreenController::class, 'angio'])->name('doctor-screen.angio');
     Route::post('doctor-screen/echo_store', [DoctorScreenController::class, 'echo_store'])->name('doctor-screen.echo_store');
+    Route::post('doctor-screen/ecg_store', [DoctorScreenController::class, 'ecg_store'])->name('doctor-screen.ecg_store');
     Route::resource('history', HistoryController::class);
     Route::get('doctor_procedures_history/{id}', [HistoryController::class, 'docs_pros'])->name('docs.pros');
     Route::resource('patient_bill', PatientBillController::class);

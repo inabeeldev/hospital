@@ -24,40 +24,47 @@
         @endif
 
 
-        <table class="table table-bordered">
-            <tr>
-                <th>No</th>
-                <th>Name</th>
-                <th>Email</th>
-                {{-- <th width="280px">Action</th> --}}
-            </tr>
-            @foreach ($doctors as $doctor)
+        <table class="table table-bordered display nowrap" id="tab2">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    {{-- <th width="280px">Action</th> --}}
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($doctors as $doctor)
             <tr>
                 <td>{{ ++$i }}</td>
                 <td>{{ $doctor->name }}</td>
                 <td>{{ $doctor->email }}</td>
-                {{-- <td>
-                    <form action="{{ route('doctors.destroy',$doctor->id) }}" method="POST">
-                        <a class="btn btn-info" href="{{ route('doctors.show',$doctor->id) }}">Show</a>
-                        @can('doctor-edit')
-                        <a class="btn btn-primary" href="{{ route('doctors.edit',$doctor->id) }}">Edit</a>
-                        @endcan
-
-
-                        @csrf
-                        @method('DELETE')
-                        @can('doctor-delete')
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                        @endcan
-                    </form>
-                </td> --}}
             </tr>
             @endforeach
+            </tbody>
         </table>
 
 
-        {!! $doctors->links() !!}
+        {{-- {!! $doctors->links() !!} --}}
 
     </div>
 
+@endsection
+@section('scripts')
+
+    <script>
+        $(document).ready(function() {
+    $('#tab2').DataTable( {
+        paging: true,
+        select: true,
+        dom: 'lBfrtip',
+        buttons: [
+            { extend: 'pdf', className: 'btn btn-primary' },
+            { extend: 'print', className: 'btn btn-warning' },
+            { extend: 'excel', className: 'btn btn-success' },
+            { extend: 'copy', className: 'btn btn-info' }
+        ]
+        } );
+    } );
+    </script>
 @endsection

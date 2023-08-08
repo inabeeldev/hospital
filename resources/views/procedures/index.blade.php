@@ -25,7 +25,7 @@
         @endif
 
 
-        <table class="table table-bordered"  id="myTable">
+        <table class="table table-bordered display nowrap"  id="tab4">
             <thead>
             <tr>
                 <th>No</th>
@@ -68,9 +68,19 @@
 @endsection
 
 @section('scripts')
-    <script>
-        $(document).ready( function () {
-            $('#myTable').DataTable();
-        } );
-    </script>
+<script>
+    $(document).ready(function() {
+$('#tab4').DataTable( {
+    paging: true,
+    select: true,
+    dom: 'lBfrtip',
+    buttons: [
+        { extend: 'pdf', className: 'btn btn-primary' },
+        { extend: 'print', className: 'btn btn-warning' },
+        { extend: 'excel', className: 'btn btn-success' },
+        { extend: 'copy', className: 'btn btn-info' }
+    ]
+    } );
+} );
+</script>
 @endsection

@@ -22,15 +22,19 @@
     @endif
 
 
-    <table class="table table-bordered">
-     <tr>
-       <th>No</th>
-       <th>Name</th>
-       <th>Email</th>
-       <th>Roles</th>
-       <th width="280px">Action</th>
-     </tr>
-     @foreach ($data as $key => $user)
+    <table class="table table-bordered display nowrap" id="tab3">
+
+     <thead>
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Roles</th>
+            <th width="280px">Action</th>
+          </tr>
+     </thead>
+     <tbody>
+        @foreach ($data as $key => $user)
       <tr>
         <td>{{ ++$i }}</td>
         <td>{{ $user->name }}</td>
@@ -51,10 +55,30 @@
         </td>
       </tr>
      @endforeach
+     </tbody>
     </table>
 
 
     {!! $data->render() !!}
 
 </div>
+@endsection
+
+@section('scripts')
+
+    <script>
+        $(document).ready(function() {
+    $('#tab3').DataTable( {
+        paging: true,
+        select: true,
+        dom: 'lBfrtip',
+        buttons: [
+            { extend: 'pdf', className: 'btn btn-primary' },
+            { extend: 'print', className: 'btn btn-warning' },
+            { extend: 'excel', className: 'btn btn-success' },
+            { extend: 'copy', className: 'btn btn-info' }
+        ]
+        } );
+    } );
+    </script>
 @endsection

@@ -43,7 +43,11 @@ class PermissionTableSeeder extends Seeder
             'reference-list',
             'reference-create',
             'reference-edit',
-            'reference-delete'
+            'reference-delete',
+            'user-list',
+            'user-create',
+            'user-edit',
+            'user-delete'
 
          ];
 
