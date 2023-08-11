@@ -12,6 +12,7 @@ use App\Models\Reference;
 use App\Models\Department;
 use Illuminate\Http\Request;
 use App\Events\NewAppointment;
+use App\Models\PatientProcedure;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\Console\Input\Input;
 
@@ -267,14 +268,16 @@ class PatientController extends Controller
         $doctors = User::pluck('name','id')->all();
         $conditions = Condition::pluck('name','id')->all();
         $departments = Department::pluck('name','id')->all();
-        $procedures = Procedure::where('doctor_id', $patient->doctor_id)->pluck('name','id')->all();
-        // $procedures = DB::table('procedures')
-        // ->join('patient_procedures', 'procedures.id',"=",'patient_procedures.procedure_id')
-        // ->join('patients', 'patients.id',"=",'patient_procedures.patient_id')
-        // ->where('patients.id' , $id)
-        // ->select('procedures.*')->pluck('name','id')->all();
-        // ->get();
-        return view('patients.edit',compact('patient','references','doctors','conditions','departments','procedures'));
+        $procedures = Procedure::where('doctor_id', $patient->doctor_id)->get();
+        // $procedures = PatientProcedure::join('procudures', 'patient_procedures')
+        // ->where('patient_id', $patient->id)->get();
+        $p_procedures = DB::table('procedures')
+        ->join('patient_procedures', 'procedures.id',"=",'patient_procedures.procedure_id')
+        ->join('patients', 'patients.id',"=",'patient_procedures.patient_id')
+        ->where('patients.id' , $id)
+        ->select('procedures.*')->get();
+        // dd($procedures);
+        return view('patients.edit',compact('patient','references','doctors','conditions','departments','procedures','p_procedures'));
     }
 
     /**
@@ -287,14 +290,17 @@ class PatientController extends Controller
     public function update(Request $request, Patient $patient)
     {
         // dd($request->all());
+
+        $patient = Patient::findOrFail($patient->id);
+        //  dd($patient);
         $pat =  $patient->update($request->except(['procedure_id']));
 
         $input1 = $request->all();
         if ($request->procedure_id) {
-            DB::table('patient_procedures')
-            ->where('patient_id', $patient->id)
-            ->delete();
-
+            PatientProcedure::where('patient_id', $patient->id)->delete();
+            $procedures = Procedure::whereIn('id' , $request->procedure_id)->get();
+            $fee = $procedures->sum('fee');
+            $patient->update(['total_fee' => $fee]);
         foreach ($input1['procedure_id'] as $pa) {
                 # code...
             DB::table('patient_procedures')

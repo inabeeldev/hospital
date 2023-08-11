@@ -227,14 +227,37 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
+                            <label for="">Selected Procedures</label>
+                            @foreach ($p_procedures as $procedure)
+                            <ul>
+                                <li> {{$procedure->name}}</li>
+                            </ul>
+                            @endforeach
+
+                        </div>
+                    </div>
+                    {{-- <div class="col-md-12">
+                        <div class="form-group">
                             <label for="">Select Procedures</label>
                             {{Form::select('procedure_id', $procedures,null,array('class'=>'form-control select2','multiple'=>'multiple','name'=>'procedure_id[]'))}}
                         </div>
+                    </div> --}}
+                    <div class="col-md-12 pros1">
+                        <div class="form-group">
+                            <label for="">Select Procedures</label>
+                            <select name="procedure_id[]" style="width: 100%" class="form-control select2" multiple="multiple">
+                                <option value="">Select Procedures</option>
+                                @foreach ($procedures as $procedure)
+                                    <option value="{{$procedure->id}}">{{$procedure->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
+
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label for="">Total Fee</label>
-                            <input type="text" class="form-control" disabled value="{{ $patient->total_fee }}"  id="staticEmail" name="total_fee" >
+                            <input type="text" class="form-control" disabled value="{{ $patient->total_fee }}"  id="staticEmail" >
                         </div>
                     </div>
 

@@ -209,13 +209,13 @@ if(this.checked){
 $('.tbh1').DataTable( {
     paging: true,
     select: true,
-    dom: 'lBfrtip',
-    buttons: [
-        { extend: 'pdf', className: 'btn btn-primary' },
-        { extend: 'print', className: 'btn btn-warning' },
-        { extend: 'excel', className: 'btn btn-success' },
-        { extend: 'copy', className: 'btn btn-info' }
-    ]
+    // dom: 'lBfrtip',
+    // buttons: [
+    //     { extend: 'pdf', className: 'btn btn-primary' },
+    //     { extend: 'print', className: 'btn btn-warning' },
+    //     { extend: 'excel', className: 'btn btn-success' },
+    //     { extend: 'copy', className: 'btn btn-info' }
+    // ]
     } );
 } );
 </script>

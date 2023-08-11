@@ -52,13 +52,13 @@
     border: solid 1px grey;
 }
 footer#page-footer{
- 
+
 
 }
 .token-main{
     border:solid 1px grey;
     margin-bottom: 20px !important;
-    
+
 }
 .patient-res-payment select {
     padding: 3px;
@@ -82,7 +82,7 @@ footer#page-footer{
     align-items: center;
     justify-content: center;
     text-align: center;
- 
+
 }
 .inner.token-num p {
     font-size: 50px;
@@ -96,5 +96,120 @@ footer#page-footer{
 @media(max-width:1300px){
 .token-main{
     margin:50px;
-}    
 }
+}
+
+
+.res-payment-page .payment-header{
+    border-bottom:solid 3px #000;
+    margin-bottom: 5px;
+    padding:5px;
+  }
+  .res-payment-page .row{
+    padding:5px;
+  }
+  .res-payment-page .payment-bottom{
+      border-bottom:solid 3px #000;
+      border-top:solid 3px #000;
+
+  }
+  .res-payment-page  .discount{
+    background: #fff;
+    padding:20px;
+  }
+
+  .all-paitent-history-list {
+      display: flex;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+  }
+  .all-paitent-history-list div{
+      margin:10px;
+      width:20%;
+  }
+  .all-paitent-history-list .click{
+      color:transparent;
+  }
+  .col-lg-12.margin-tb.mt-7 .btn{
+      margin-bottom:20px;
+  }
+  .col-lg-12.margin-tb.mt-7 h2{
+         text-transform: capitalize;
+  }
+  .col-xs-3.col-sm-3.col-md-3 {
+      border-top: solid 1px grey;
+      border-right: solid 1px grey;
+  }
+  .paiten-detail-date-main{
+      border: solid 1px grey;
+  }
+  footer#page-footer{
+
+
+  }
+
+
+  .token-main-inner p{
+      margin-bottom:10px;
+  }
+  .token-main{
+      border:solid 1px grey;
+      margin-bottom: 20px !important;
+
+  }
+  .patient-res-payment select {
+      padding: 3px;
+  }
+  .token-main {
+      padding: 20px;
+      width: 500px;
+      height: 700px;
+  }
+  .token-main-inner{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+     flex-wrap: wrap;
+  }
+  .token-main-inner .inner{
+       width: 50%;
+       padding: 0px 20px;
+
+
+
+
+  }
+  .inner ul {
+      list-style: circle;
+      padding-left: 0px;
+      font-size: 12px;
+      font-weight: 800;
+  }
+  .inner.token-num {
+  display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      flex-direction: column-reverse;
+
+  }
+  .inner.token-num p {
+      font-size: 36px;
+      border-radius: 100%;
+      border: solid 5px black;
+      margin-top: 10px;
+      padding: 5px 21px;
+      font-weight: 800;
+
+
+  }
+  .patient-res-reff label{
+      font-size:14px;
+  }
+  @media(max-width:1300px){
+  .token-main{
+      margin:50px;
+  }
+  }
