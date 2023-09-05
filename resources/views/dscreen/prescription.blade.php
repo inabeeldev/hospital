@@ -1,44 +1,37 @@
 {{-- prescription start --}}
-<section class="Specialist-black-color pre">
-    <div class="container Specialist-4 ">
-        <div class="container  ">
-            <div class="row">
-                <div class="col-lg-6 p-0">
-                    <label for="username">
-                        <h5>Name:</h5>
-                    </label><br>
-                    <input type="text" id="username" disabled value="{{$patient->first_name}}" name="username">
-                    <br>
-                </div>
-                <div class="col-lg-2 p-0">
-                    <label for="username">
-                        <h5>Age:</h5>
-                    </label>
-                    <input type="number" disabled value="{{$patient->age}}" id="username" ><br>
-                </div>
-                <div class="col-lg-2 p-0">
-                    <label for="username">
-                        <h5>Sex:</h5>
-                    </label><br>
-                    <input type="text" disabled id="username" value="{{$patient->gender}}">
-                    <br>
+<section class="Specialist-black-color bg-white pre">
+   
+        <div class="container  bg-white">
 
-                </div>
-                <div class="col-lg-2 p-0">
+    <div class="form-row">
+    <div class="col-md-3 mb-3">
+      <label for="username">Name:</label>
+      <input type="text" id="username" disabled value="{{$patient->first_name}}" name="username">
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="username">Age:</label>
+      <input type="text" id="username" disabled value="{{$patient->age}}" name="username">
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="username">Gender:</label>
+      <input type="text" id="username" disabled value="{{$patient->gender}}" name="username">
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="username">Date:</label>
+      <input type="text" id="username" disabled value="{{ date('d-m-Y') }}" name="username">
+    </div>
+   
+    </div>
 
-                    <label for="birthday">
-                        <h5>Date:</h5>
-                    </label>
-                    <input type="text" id="username" disabled value="{{ date('d-m-Y') }}">
-                </div>
-            </div>
+
+           
         </div>
 
         <!--form--center-->
 
-        <div class="container">
+        <div class="container bg-white">
             <div class="row">
-                <div class="col-lg-9 p-0">
+                <div class="col-lg-9 pt-0 mt-0">
                     <div class="btn-add-medicine">
                         <h1>Add New Medicine Description</h1>
                     </div>
@@ -520,35 +513,37 @@
 
 
                 </div>
-                <div class="col-lg-3 p-0">
-                    <div class="row">
-                        <div class="col-lg-12">
+                <div class="col-lg-3 ">
+                    <div class="row ">
+                        <div class="pt-5 col-lg-12">
                             <label for="username">
                                 <h2>Complanints:</h2>
+                                <textarea id="w3review" name="p_complaints" class="form-control ml-3" placeholder="complaints"></textarea>
                             </label>
-                                <textarea id="w3review" name="p_complaints" rows="4" cols="50" placeholder="complaints"></textarea>
 
 
                         </div>
-                        <div class="col-lg-11 ml-2">
+                        <div class="col-lg-12 ml-2 my-4">
                             <h2 class="m-0">Examination:</h2>
-
-                            <div class="display-flex">
-                                <h5 class="m-0">BP: <input type="text" class="mb-2" value="" id="username" name="p_bp"></h5>
-                                <h5 class="m-0">Pulse:<input type="text" value="" class="mb-2" id="username" name="p_pulse"></h5><br>
-                            </div>
-
+                        </div>
+                        <style>
+                            .form-border-remove{
+                                border: 0;
+                                border-bottom: 1px solid;
+                            }
+                        </style>
+                        <div class="col-lg-11 ml-2">
+                        <h5 class="m-0"> <input type="text" placeholder=" BP:" class="mb-4 form-control form-border-remove" value="" id="username" name="p_bp"></h5>
+                            <h5 class="m-0"><input type="text" value="" placeholder=" Pulse:" class="mb-2 form-control form-border-remove" id="username" name="p_pulse"></h5><br>
+                            <h5 class="m-0"><input type="text" value="" placeholder=" Weight:" class="mb-2 form-control form-border-remove" id="username" name="p_weight">
+                            </h5><br>
+                            <h5 class="m-0"><input type="text" class="mb-2 form-control form-border-remove" placeholder=" CVS:" id="username" name="p_cvs">
+                            </h5><br>
+                            <h5 class="m-0"><input type="text" class="form-border-remove form-control mb-2" placeholder=" Chest:" id="username" name="p_chest">
+                            </h5><br>
                         </div>
                         <div class="col-lg-11 ml-2">
-                            <h5 class="m-0">Weight:<input type="text" value="" class="mb-2" id="username" name="p_weight">
-                            </h5><br>
-                            <h5 class="m-0">CVS:<input type="text" class="mb-2" id="username" name="p_cvs">
-                            </h5><br>
-                            <h5 class="m-0">Chest:<input type="text" class="mb-2" id="username" name="p_chest">
-                            </h5><br>
-                        </div>
-                        <div class="col-lg-11 ml-2">
-                            <h5 class="m-0">ECG:<input type="text" class="mb-2" id="username" name="p_ecg">
+                            <h5 class="m-0"><input type="text" class="form-border-remove mb-2 form-control" placeholder=" ECG:" id="username" name="p_ecg">
                             </h5><br>
 
                         </div>
@@ -564,14 +559,14 @@
             <div class="container p-0">
 
                 <div class="row">
-                    <div class="col-lg-9">
+                    <div class="col-lg-9 ">
                         <h2 class="m-0">Comments</h2>
-                        <textarea name="p_comments" placeholder="comments"></textarea>
+                        <textarea name="p_comments" class="form-control "  placeholder="comments"></textarea>
                     </div>
 
-                    <div class="col-lg-3 p-0 mb-2">
-                        <h2 class="m-0">Investigation:</h2>
-                            <textarea id="w3review" name="p_investigation" rows="3" cols="50" placeholder="Investigation"></textarea>
+                    <div class="col-lg-3 mr-1-0 mb-2">
+                        <h2 class="m-0 ">Investigation:</h2>
+                            <textarea id="w3review" name="p_investigation" class="form-control"  placeholder="Investigation"></textarea>
 
                     </div>
                 </div>
@@ -581,7 +576,7 @@
 
 </section>
 
-<div class="container-fluid footer">
+<div class="container footer pt-3">
     <div class="row">
         <div class="col-lg-6">
             <h6 class="footer-heading">Civil Lines, Tufail Shaheed Road, Near Ayesha Park, Sheikhupura</h6>
