@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="col-lg-9 pt-0 mt-0">
                     <div class="btn-add-medicine">
-                        <h1>Add New Medicine Description</h1>
+                        <h3>Add New Medicine Description</h3>
                     </div>
 
                     <hr>
@@ -515,16 +515,16 @@
                 </div>
                 <div class="col-lg-3 ">
                     <div class="row ">
-                        <div class="pt-5 col-lg-12">
+                        <div class="pt-6 col-lg-12">
                             <label for="username">
-                                <h2>Complanints:</h2>
+                                <h3>Complanints:</h3>
                                 <textarea id="w3review" name="p_complaints" class="form-control ml-3" placeholder="complaints"></textarea>
                             </label>
 
 
                         </div>
                         <div class="col-lg-12 ml-2 my-4">
-                            <h2 class="m-0">Examination:</h2>
+                            <h3 class="m-0">Examination:</h3>
                         </div>
                         <style>
                             .form-border-remove{
@@ -560,12 +560,12 @@
 
                 <div class="row">
                     <div class="col-lg-9 ">
-                        <h2 class="m-0">Comments</h2>
+                        <h3 class="m-0">Comments</h3>
                         <textarea name="p_comments" class="form-control "  placeholder="comments"></textarea>
                     </div>
 
                     <div class="col-lg-3 mr-1-0 mb-2">
-                        <h2 class="m-0 ">Investigation:</h2>
+                        <h3 class="m-0 ">Investigation:</h3>
                             <textarea id="w3review" name="p_investigation" class="form-control"  placeholder="Investigation"></textarea>
 
                     </div>
@@ -576,18 +576,6 @@
 
 </section>
 
-<div class="container footer pt-3">
-    <div class="row">
-        <div class="col-lg-6">
-            <h6 class="footer-heading">Civil Lines, Tufail Shaheed Road, Near Ayesha Park, Sheikhupura</h6>
-            <h3 class="footer-head"> Contact Us:056-3614646, 0309-1391390</h3>
-        </div>
-        <div class="col-lg-6">
-            <h6 class="footer-heading">Clinic Time:</h6>
-            <h6 class="footer-heading">Monday to Saturday 1:00 pm to 3:00 pm</h6>
-            <h6 class="footer-heading ">Sunday Timing:10:00 am to 01:00 pm</h6>
-        </div>
-    </div>
-</div>
+
 </div>
 {{-- prescription end --}}

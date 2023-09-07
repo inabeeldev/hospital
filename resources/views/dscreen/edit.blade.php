@@ -18,8 +18,18 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h1 class="text-center curent-pa" style="margin-bottom: 0px"> Current Paitent Detail</h1>
+                            <br>
                         </div>
-                        <div class="col-lg-10">
+                            <div class="col-lg-2 right-dr-info ">
+                            @if ($patient->token_no)
+                            <h5 class="">Token No : {{$patient->token_no}}</h5>
+                            @else
+                            <h5 class="">Token No: {{$patient->token_no_s}}</h5>
+                            @endif
+                            <h6>Date: {{ date('d-m-Y') }}</h6>
+                            <h6 class="total-pa">MR-No:  {{$patient->mr_no}}</h6>
+                        </div>
+                        <div class="col-lg-9">
 
                             <table class="table">
 
@@ -44,16 +54,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="col-lg-2 ">
-                            @if ($patient->token_no)
-                            <h5 class="">Token No : {{$patient->token_no}}</h5>
-                            @else
-                            <h5 class="">Token No : {{$patient->token_no_s}}</h5>
-                            @endif
-                            <h6>Date: {{ date('d-m-Y') }}</h6>
-                            <h4 class="total-pa">MR-No <span
-                                    class="btn btn-sucess"><small>{{$patient->mr_no}}</small></span></h4>
-                        </div>
+                    
                         <br>
                     </div>
                 </div>
@@ -87,7 +88,7 @@
 
             </div>
 
-            <div class="col-lg-5 pt-4">
+            <div class="col-lg-5 pt-4 d-flex flex-column justify-content-center">
                 <h5>Procedures</h5>
                 @foreach ($procedures as $procedure)
 
@@ -105,11 +106,16 @@
 
             </div>
 
-            <div class="col-lg-2 pt-4">
-                <a class="btn btn-primary" href="{{ route('doctor-screen.echo',$patient->id) }}">Echo</a>
-                <a class="btn btn-primary" href="{{ route('doctor-screen.ecg',$patient->id) }}">ECG</a><br>
-                <a class="btn btn-primary" href="{{ route('doctor-screen.angio',$patient->id) }}"
-                    style="margin-top: 10px">Angiography</a>
+            <div class="col-lg-2 pt-4 d-flex flex-column justify-content-center">
+                <h6>Add a Reports Data</h6>
+                <ol class="reports-add-button">
+                    <li><a class="btn btn-primary" href="{{ route('doctor-screen.echo',$patient->id) }}">Echo</a></li>
+                    <li><a class="btn btn-primary" href="{{ route('doctor-screen.ecg',$patient->id) }}">ECG</a></li>
+                    <li>  <a class="btn btn-primary" href="{{ route('doctor-screen.angio',$patient->id) }}"
+                    >Angiography</a></li>
+                </ol>
+                
+              
             </div>
         </div>
     </div>
@@ -136,7 +142,7 @@
     </div>
 </form>
 @if ($ww != null)
-<div class="container bg-white">
+<!-- <div class="container bg-white">
     <table class="table table-bordered mr-4 ml-4" id="tb1">
         <thead>
             <tr>
@@ -165,7 +171,7 @@
 
     </table>
 
-</div>
+</div> -->
 @endif
 
 @endsection

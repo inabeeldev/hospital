@@ -31033,3 +31033,41 @@ footer#page-footer {}
         margin: 50px;
     }
 }
+
+input#medicine-input {
+    border-bottom: solid 1px #000 !important;
+}
+input#medicine-input:focus, input.form-control:focus {
+    outline: none;
+}
+select.form-control:focus {
+    outline: none;
+}
+
+
+select.form-control, select.custom-select-1.form-control, input.form-control {
+    font-size: 12px;
+    border: none;
+    border-bottom: solid 1px black;
+    border-radius: 0px;
+    margin-top: 13px;
+}
+.reports-add-button li a {
+    margin-top:5px !important;
+    width:100%;
+    padding: auto 10px;
+    font-size: 12px;
+}
+.reports-add-button{
+    list-style: none;
+  padding-left: 0px;
+}
+.right-dr-info h5, .right-dr-info h6 {
+    margin-bottom:5px;
+font-size: 12px;
+}
+
+.form-row input {
+    border: none;
+    border-bottom: solid 1px black;
+}
