@@ -1,4 +1,9 @@
 @extends('layouts.app_main')
+<style>
+    .svg.w-5.h-5 {
+    width: 30px;
+}
+</style>
 
 
 @section('content')

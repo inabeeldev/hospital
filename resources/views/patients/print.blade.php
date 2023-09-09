@@ -87,16 +87,17 @@
     @endif --}}
 </div>
 </div>
-
-    <button class="print50 btn btn-success">
+<div class="container">
+    <div class="row mb-4">
+        <a class="btn btn-primary mx-auto" href="{{route('patients.index')}}">
+            Go Back
+        </a>
+    <button class="print50 mx-auto btn btn-success">
       Print this
     </button><br>
 
-    <a class="btn btn-primary" href="{{route('patients.index')}}">
-        Go Back
-    </a>
-
-
+    </div>
+    </div>
 @endsection
 
 

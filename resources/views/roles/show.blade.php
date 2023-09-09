@@ -1,4 +1,4 @@
-@extends('layouts.app_main')
+    @extends('layouts.app_main')
 
 
 @section('content')
@@ -27,7 +27,7 @@
                 <strong>Permissions:</strong>
                 @if(!empty($rolePermissions))
                     @foreach($rolePermissions as $v)
-                        <label class="label label-success">{{ $v->name }},</label>
+                        <li class="list-group ">{{ $v->name }},</li>
                     @endforeach
                 @endif
             </div>
