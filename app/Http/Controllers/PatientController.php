@@ -13,6 +13,7 @@ use App\Models\Department;
 use Illuminate\Http\Request;
 use App\Events\NewAppointment;
 use App\Models\PatientProcedure;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\Console\Input\Input;
 
@@ -202,6 +203,7 @@ class PatientController extends Controller
         $doctor_id = $request->doctor_id;
         $patient_id = $request->id;
         $input['closed'] = 0;
+        $input['created_by'] = Auth::user()->id;
         $cr_patient =  Patient::create($input);
         $input1 = $request->all();
         if ($request->procedure_id) {
@@ -241,6 +243,15 @@ class PatientController extends Controller
     {
         $patient = Patient::findOrFail($id);
         $references = Reference::where('id', $patient->reference_id)->first();
+        $user = User::where('id', $patient->created_by)->first();
+        if ($user) {
+            # code...
+        $name_and_email = $user->name.' ('.$user->email.')';
+
+        }
+        else {
+            $name_and_email = 'Not Specified';
+        }
         $doctors = User::where('id', $patient->doctor_id)->first();
         $conditions = Condition::where('id', $patient->condition_id)->first();
         $departments = Department::where('id', $patient->department_id)->first();
@@ -251,7 +262,7 @@ class PatientController extends Controller
         ->select('procedures.*')
         ->get();
         // dd($references);
-        return view('patients.show',compact('patient','doctors','references','conditions','departments','procedures'));
+        return view('patients.show',compact('patient','doctors','references','conditions','departments','procedures','name_and_email'));
     }
 
     /**
