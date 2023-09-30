@@ -2,7 +2,7 @@
 
 
 @section('content')
-<form class=" container    bg-white" action="{{ route('doctor-screen.update',$patient->id) }}" method="POST">
+<form class=" containerfluid p-3  bg-white" action="{{ route('doctor-screen.update',$patient->id) }}" method="POST">
 
 
     <div class="container-fluid bg-white p-0 docotor-screen">
@@ -11,7 +11,7 @@
 
 
     </div>
-    <div class="container   bg-white">
+    <div class="containerfluid p-3   bg-white">
         <div class="row  d-flex justify-content-center p-0">
             <div class="col-lg-12">
                 <div class="doctor-edit-section">

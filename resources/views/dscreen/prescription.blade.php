@@ -1,7 +1,7 @@
 {{-- prescription start --}}
 <section class="Specialist-black-color bg-white pre">
    
-        <div class="container  bg-white">
+        <div class="container-fluid  bg-white">
 
     <div class="form-row">
     <div class="col-md-3 mb-3">
@@ -29,7 +29,7 @@
 
         <!--form--center-->
 
-        <div class="container bg-white">
+        <div class="container-fluid bg-white">
             <div class="row">
                 <div class="col-lg-9 pt-0 mt-0">
                     <div class="btn-add-medicine">

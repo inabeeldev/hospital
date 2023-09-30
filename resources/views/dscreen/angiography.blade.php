@@ -2,10 +2,10 @@
 
 @section('content')
 
-<div class="container">
+<div class="container-fluid bg-white">
 
 
-            <div class="pull-right">
+            <div class="pull-right ">
                 <a class="btn btn-primary" href="{{ url()->previous() }}"> Back</a>
             </div>
 
@@ -66,7 +66,7 @@
     <br>
     <!-- Registration -->
 
-    <div class="container">
+    <div class="container-fluid">
         <h2 class="text-center my-5">Registration</h2>
 
             <div class="row">
@@ -109,7 +109,7 @@
 
     <!-- PROCEDURER-->
 
-    <div class="container">
+    <div class="container-fluid">
         <h2 class="text-center my-5">PROCEDURE</h2>
 
             <div class="row">
@@ -129,7 +129,7 @@
     </div>
 
     <!-- Report -->
-    <div class="container">
+    <div class="container-fluid">
         <h2 class="text-center my-5">PROCEDURE</h2>
 
             <div class="row">
@@ -155,7 +155,7 @@
     </div>
     <!-- CONCLUSION section  -->
 
-    <div class="container mb-5">
+    <div class="container-fluid mb-5">
         <h2 class="text-center my-5">CONCLUSION</h2>
 
             <div class="row">
