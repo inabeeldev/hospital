@@ -66,7 +66,7 @@
     <br>
     <!-- Registration -->
 
-    <div class="container-fluid">
+    <div class="container-fluid bg-white">
         <h2 class="text-center my-5">Registration</h2>
 
             <div class="row">
