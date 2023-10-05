@@ -9,13 +9,13 @@
             <div class="pull-left text-center">
                 <h2> Show Patient</h2>
             </div>
-            
+
         </div>
     </div>
 
 
     <div class="row">
-        
+
         <!-- tadle section  -->
         <div class="container">
             <table class="table  table-bordered">
@@ -107,6 +107,11 @@
 
                         <th scope="row"> <strong>Total fee:</strong></th>
                         <td>{{ $patient->total_fee ? $patient->total_fee : '' }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><strong>Added By:</strong></th>
+                        <td> {{ $name_and_email ? $name_and_email : 'Not Specified'}}
+                        </td>
                     </tr>
 
 

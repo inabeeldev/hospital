@@ -24,7 +24,7 @@ class CreateAdminUserSeeder extends Seeder
             'password' => bcrypt('11111111')
         ]);
 
-        $role = Role::create(['name' => 'Admin']);
+        $role = Role::where('name' , 'Admin')->first();
 
         $permissions = Permission::pluck('id','id')->all();
 

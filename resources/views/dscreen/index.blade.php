@@ -3,20 +3,16 @@
 
 @section('content')
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-lg-12 margin-tb mt-7">
             <div class="pull-left">
                 <h2>Today Date : {{ date('d-m-Y') }}</h2>
                 <h2>Patients</h2>
                 <h4>Total Patients : {{$patients->count()}}</h4>
-
             </div>
-
         </div>
     </div>
-
-
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
@@ -30,7 +26,6 @@
             <th>No</th>
             <th>Token No</th>
             <th>MR NO</th>
-
             <th>Name</th>
             <th>phone</th>
             <th>Total Fee</th>

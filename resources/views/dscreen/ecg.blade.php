@@ -2,12 +2,13 @@
 
 @section('content')
 
-<div class="container">
-
-
+<div class="container-fluid bg-white">
+<div class="row">
+    <div class="col-lg-12">
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ url()->previous() }}"> Back</a>
-            </div>
+                <a class="btn btn-primary mt-3" href="{{ url()->previous() }}"> Back</a>
+            </div></div>
+</div>
 
 
 
@@ -33,7 +34,7 @@
 
 
 
-                <div class="row">
+                <div class="row p-3">
 
                     <div class="custom-file">
                         <input type="file" name="image" class="custom-file-input" id="customFile">
