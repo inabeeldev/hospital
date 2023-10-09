@@ -8,6 +8,7 @@ use App\Models\Doctor;
 use App\Models\Patient;
 use App\Models\Condition;
 use App\Models\Procedure;
+use Yajra\DataTables\DataTables;
 use App\Models\Reference;
 use App\Models\Department;
 use Illuminate\Http\Request;
@@ -34,22 +35,33 @@ class PatientController extends Controller
 
 
 
-    public function index()
-    {
-        // $patients = Patient::latest()->paginate(5);
-        // return view('patients.index',compact('patients'))
-        //     ->with('i', (request()->input('page', 1) - 1) * 5);
-            $patients = Patient::orderBy('updated_at','desc')->get();
-            $docs = User::where('job', 'Doctor')->get();
-            // dd($docs);
-        return view('patients.index',compact('patients','docs'));
+    // public function index(Request $request)
+    // {
 
+    //         $patients = Patient::orderBy('updated_at','desc')->get();
+    //         $docs = User::where('job', 'Doctor')->get();
+    //         // dd($docs);
+    //     return view('patients.index',compact('patients','docs'));
+
+
+
+    // }
+
+    public function index(Request $request)
+    {
+        if ($request->ajax()) {
+            $data = Patient::orderBy('updated_at','desc')->get();
+            return DataTables::of($data)
+                    ->addIndexColumn()
+
+                    ->make(true);
+        }
+
+        return view('patients.index');
     }
     public function search(Request $request)
     {
-        // $patients = Patient::latest()->paginate(5);
-        // return view('patients.index',compact('patients'))
-        //     ->with('i', (request()->input('page', 1) - 1) * 5);
+
             $patients = Patient::where('doctor_id', $request->doc)->get();
             // dd($docs);
         return view('patients.index',compact('patients'));
