@@ -32,33 +32,40 @@
                 <input type="hidden" name="patient_id" value="">
             <div class="row">
                 <div class="col-lg-3 col-sm-12 col-md-6 mb-3">
-                    <input type="text" class="form-control" id="email" placeholder="Patient ID" name="Patient ID">
+                    <input type="text" class="form-control" value="{{ $patient->mr_no }}" disabled>
                 </div>
                 <div class="col-lg-3 col-sm-12 col-md-6 mb-3">
-                    <input type="text" class="form-control" placeholder="Name" name="name">
+                    <input type="text" class="form-control" value="{{ $patient->first_name.' '.$patient->second_name }}" disabled>
                 </div>
                 <div class="col-lg-3 col-sm-12 col-md-6 mb-3">
-                    <input type="text" class="form-control" placeholder="Addres" name="addres">
-                </div>
-                <div class="col-lg-3 col-sm-12 col-md-6 mb-3">
-                    <input type="number" class="form-control" placeholder="Age" name="age">
-                </div>
-                <div class="col-lg-3 col-sm-12 col-md-6 mb-3">
+                    <input type="text" class="form-control" value="{{ $patient->address }}" disabled>
 
-                        <select name="gender" class="custom-select">
+                </div>
+                <div class="col-lg-3 col-sm-12 col-md-6 mb-3">
+                    <input type="text" class="form-control" value="{{ $patient->age }}" disabled>
+                </div>
+                <div class="col-lg-3 col-sm-12 col-md-6 mb-3">
+                    <input type="text" class="form-control" value="{{ $patient->gender }}" disabled>
+                </div>
+                <div class="col-lg-3 col-sm-12 col-md-6 mb-3">
+                    <input type="text" class="form-control" value="{{ $patient->weight}}" placeholder="{{ $patient->weight ? "" : "Enter Weight" }}">
+
+                        {{-- <select name="gender" class="custom-select">
                             <option selected> Select your sex</option>
                             <option value="volvo">Male</option>
                             <option value="fiat">Female</option>
                             <option value="audi">Custom</option>
-                        </select>
+                        </select> --}}
 
                 </div>
 
                 <div class="col-lg-3 col-sm-12 col-md-6 mb-3">
-                    <input type="number" class="form-control" placeholder="Weight" name="Weight">
+                    <input type="number" class="form-control" value="{{ $patient->bp }}" disabled>
+
                 </div>
                 <div class="col-lg-3 col-sm-12 col-md-6 mb-3">
-                    <input type="text" class="form-control" placeholder="Heart Rate" name="Heart Rate">
+                    <input type="number" class="form-control" value="{{ $patient->phone }}" disabled>
+
                 </div>
 
             </div>
@@ -73,15 +80,11 @@
                 <div class="col-lg-3 col-sm-12 col-md-6 mb-3">
                     <input type="number" class="form-control" placeholder="Catch no" name="Catch no">
                 </div>
-                <div class="col-lg-3 col-sm-12 col-md-6 mb-3">
-                    <input type="tel" class="form-control" placeholder="Mobile no" name="Mobile">
-                </div>
+
                 <div class="col-lg-3 col-sm-12 col-md-6 mb-3">
                     <input type="text" class="form-control" placeholder="hospitil" name="hospitil">
                 </div>
-                <div class="col-lg-3 col-sm-12 col-md-6 mb-3">
-                    <input type="date" class="form-control" placeholder="Date" name="Date">
-                </div>
+
                 <div class="col-lg-3 col-sm-12 col-md-6 mb-3">
                     <input type="text" class="form-control" placeholder="Reffer By" name="Reffer">
                 </div>

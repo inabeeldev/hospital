@@ -275,9 +275,10 @@ class DoctorScreenController extends Controller
         return redirect()->route('doctor-screen.edit',$request->patient_id);
 
     }
-    public function angio()
+    public function angio($id)
     {
-        return view('dscreen.angiography');
+        $patient = Patient::find($id);
+        return view('dscreen.angiography', compact('patient'));
     }
 
 }
