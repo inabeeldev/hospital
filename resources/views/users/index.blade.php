@@ -22,7 +22,7 @@
     @endif
 
 
-    <table class="table table-bordered display nowrap" id="tab3">
+    <table class="table table-bordered display nowrap" id="tab23">
 
      <thead>
         <tr>
@@ -36,7 +36,7 @@
      <tbody>
         @foreach ($data as $key => $user)
       <tr>
-        <td>{{ ++$i }}</td>
+        <td>{{ $loop->iteration }}</td>
         <td>{{ $user->name }}</td>
         <td>{{ $user->email }}</td>
         <td>
@@ -59,7 +59,7 @@
     </table>
 
 
-    {!! $data->render() !!}
+    {{-- {!! $data->render() !!} --}}
 
 </div>
 @endsection
@@ -68,7 +68,7 @@
 
     <script>
         $(document).ready(function() {
-    $('#tab3').DataTable( {
+    $('#tab23').DataTable( {
         paging: true,
         select: true,
         dom: 'lBfrtip',
