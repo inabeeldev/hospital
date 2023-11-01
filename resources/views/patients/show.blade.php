@@ -113,6 +113,11 @@
                         <td> {{ $name_and_email ? $name_and_email : 'Not Specified'}}
                         </td>
                     </tr>
+                    <tr>
+                        <th scope="row"><strong>Added By:</strong></th>
+                        <td> {{ $patient->created_at->format('d-m-Y') }}
+                        </td>
+                    </tr>
 
 
 
