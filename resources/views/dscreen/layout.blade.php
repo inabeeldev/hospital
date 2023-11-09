@@ -208,5 +208,8 @@
     });
   </script>
 
+    <script src="<?php echo e(asset('assets/js/custom.js')); ?>" defer></script>
+
+
 </body>
 </html>
