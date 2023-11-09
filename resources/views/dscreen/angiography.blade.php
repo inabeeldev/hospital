@@ -92,12 +92,12 @@
                         </option>
 
                     </select>
-                    <input type="text" name="" id="reff-by">
+               
 
                 </div>
                 <div class="col-lg-3 col-sm-12 col-md-6 mb-3">
                     <input type="text" class="form-control" placeholder="Sub-Reffer" name="Sub-Reffer" id="sub-reffer" vlaue="rfrf">
-                    <input type="text" name="" id="sub-reff">
+                 
                 </div>
                 <div class="col-lg-3 col-sm-12 col-md-6 mb-3">
                     <input type="text" class="form-control" placeholder="Stamp-ctagories" name="Stamp-ctagories" id="stamp-cat">
@@ -174,7 +174,7 @@
 
             <div class="row">
                 <div class="col-lg-3 col-sm-12 col-md-6 mb-3">
-                    <input type="text" class="form-control" placeholder="Left Main Stem" name="Left Main Stem">
+              
                     <select class="form-control">
                         <option>Left Main Stem</option>
                         <option>1E+26</option>
@@ -279,7 +279,7 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="button" class="btn btn-primary">Submit</button>
-                <div id="click">Click</div>
+             
             </div>
         </form>
 </div>
